@@ -37,12 +37,12 @@ nav {
   border-bottom: 0.5px solid rgba(197,160,89,0.2);
   transition: padding 0.3s;
 }
-.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
-.nav-logo-img { width: 48px; height: 48px; min-width: 48px; min-height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-.nav-logo-text { display: flex; flex-direction: column; }
-.nav-logo-main { font-family: var(--ff-display); font-size: 14px; font-weight: 600; color: var(--gold); letter-spacing: 0.16em; line-height: 1; }
-.nav-logo-sub { font-family: var(--ff-ui); font-size: 8px; color: var(--cream); opacity: 0.4; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 4px; font-style: italic; }
-.nav-links { display: flex; align-items: center; gap: 32px; flex-shrink: 1; }
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; min-width: 0; }
+.nav-logo-img { width: 48px !important; height: 48px !important; min-width: 48px !important; min-height: 48px !important; max-width: 48px !important; max-height: 48px !important; border-radius: 50%; object-fit: cover; flex-shrink: 0 !important; display: block !important; }
+.nav-logo-text { display: flex; flex-direction: column; min-width: 0; }
+.nav-logo-main { font-family: var(--ff-display); font-size: 14px; font-weight: 600; color: var(--gold); letter-spacing: 0.16em; line-height: 1; white-space: nowrap; }
+.nav-logo-sub { font-family: var(--ff-ui); font-size: 8px; color: var(--cream); opacity: 0.4; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 4px; font-style: italic; white-space: nowrap; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a { font-family: var(--ff-ui); font-size: 11px; color: var(--cream); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s, color 0.2s; }
 .nav-links a:hover { opacity: 1; color: var(--gold); }
 .nav-cta { color: var(--gold) !important; opacity: 1 !important; border: 0.5px solid var(--gold); padding: 8px 22px !important; transition: background 0.2s !important; }
