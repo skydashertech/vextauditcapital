@@ -496,7 +496,7 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
         <li>30-day post-delivery support</li>
         <li>Compliance calendar included</li>
       </ul>
-      <a href="#contact" class="btn-ghost" style="display:inline-block;">Enquire Now</a>
+      <a href="#enquire-now" onclick="prefillService('GST Audit &amp; Compliance')" class="btn-ghost" style="display:inline-block;">Enquire Now</a>
     </div>
     <div class="price-card featured fade-up fade-up-delay-1">
       <div class="price-tier">Professional</div>
@@ -510,7 +510,7 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
         <li>1 month VextIntel included</li>
         <li>Dedicated advisor access</li>
       </ul>
-      <a href="#contact" class="btn-primary" style="display:inline-block;">Enquire Now</a>
+      <a href="#enquire-now" onclick="prefillService('Full Audit Bundle')" class="btn-primary" style="display:inline-block;">Enquire Now</a>
     </div>
     <div class="price-card fade-up fade-up-delay-2">
       <div class="price-tier">Enterprise</div>
@@ -524,7 +524,7 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
         <li>All service lines covered</li>
         <li>Priority response SLA</li>
       </ul>
-      <a href="#contact" class="btn-ghost" style="display:inline-block;">Enquire Now</a>
+      <a href="#enquire-now" onclick="prefillService('VextIntel Monthly Retainer')" class="btn-ghost" style="display:inline-block;">Enquire Now</a>
     </div>
   </div>
   <p class="pricing-note fade-up">All prices exclusive of applicable taxes. USD pricing available for international clients. Custom bundles for group engagements on request.</p>
@@ -601,6 +601,7 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
     <div class="fade-up fade-up-delay-2">
 
       <!-- FORM -->
+      <div id="enquire-now"></div>
       <div id="form-wrap">
         <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)" novalidate>
           <input type="hidden" name="access_key" value="83cc3e63-fbee-43e4-ba81-a074039de80b"/>
@@ -755,6 +756,49 @@ window.addEventListener('scroll', () => {
   document.getElementById('navbar').style.padding = window.scrollY > 60 ? '10px 5%' : '16px 5%';
 });
 function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+function prefillService(service) {
+  setTimeout(function() {
+    var sel = document.getElementById('cf-service');
+    if (sel) {
+      for (var i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].text.indexOf(service.replace('&amp;','&')) !== -1 || 
+            sel.options[i].text.indexOf(service) !== -1) {
+          sel.selectedIndex = i;
+          break;
+        }
+      }
+      checkFormReady();
+    }
+    // Scroll to form with navbar offset
+    var el = document.getElementById('enquire-now');
+    if (el) {
+      var top = el.getBoundingClientRect().top + window.pageYOffset - 90;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  }, 100);
+}
+
+// Override default anchor scroll for #enquire-now to account for navbar
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href="#enquire-now"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var service = '';
+      var onclick = this.getAttribute('onclick') || '';
+      var match = onclick.match(/prefillService\('([^']+)'\)/);
+      if (match) service = match[1];
+      if (service) prefillService(service);
+      else {
+        var el = document.getElementById('enquire-now');
+        if (el) {
+          var top = el.getBoundingClientRect().top + window.pageYOffset - 90;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+});
 document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
 
 // ── CAPTCHA & FORM LOGIC ──
