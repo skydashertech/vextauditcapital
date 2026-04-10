@@ -13,14 +13,14 @@ body{background:var(--bl);color:var(--cream);font-family:var(--ff-b);font-size:1
 ::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 5%;background:rgba(29,4,4,0.97);backdrop-filter:blur(16px);border-bottom:0.5px solid rgba(197,160,89,0.15);}
 .nl{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.ni{width:40px;height:40px;border-radius:50%;object-fit:cover;}
+.ni{display:none;}
 .nm{font-family:var(--ff-d);font-size:12px;font-weight:600;color:var(--gold);letter-spacing:0.18em;line-height:1;}
 .ns{font-family:var(--ff-u);font-size:7px;color:var(--cream);opacity:0.35;letter-spacing:0.22em;text-transform:uppercase;margin-top:3px;}
 .nb{font-family:var(--ff-u);font-size:10px;color:var(--cream);opacity:0.5;text-decoration:none;letter-spacing:0.14em;text-transform:uppercase;transition:opacity 0.2s,color 0.2s;}
 .nb:hover{opacity:1;color:var(--gold);}
-.shell{min-height:100vh;display:grid;grid-template-columns:1fr 520px;padding-top:68px;}
-.lp{background:var(--bl);padding:64px 5% 64px 6%;display:flex;flex-direction:column;justify-content:center;position:sticky;top:68px;height:calc(100vh - 68px);border-right:0.5px solid rgba(197,160,89,0.08);}
-.lp-seal{width:68px;height:68px;border-radius:50%;object-fit:cover;margin-bottom:28px;opacity:0.9;}
+.shell{min-height:100vh;display:block;padding-top:68px;}
+.lp{display:none !important;}
+.lp-seal{width:68px;height:68px;border-radius:50%;object-fit:cover;margin-bottom:28px;opacity:0.9;display:block;position:relative;z-index:0;flex-shrink:0;}
 .lp-ey{font-family:var(--ff-u);font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);opacity:0.65;margin-bottom:16px;}
 .lp-h1{font-family:var(--ff-d);font-size:clamp(22px,2.5vw,34px);font-weight:600;color:var(--cream);line-height:1.15;letter-spacing:0.03em;margin-bottom:18px;}
 .lp-h1 em{color:var(--gold);font-style:normal;}
@@ -30,7 +30,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .ti-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;opacity:0.65;}
 .ti-txt{font-family:var(--ff-u);font-size:11px;color:var(--cream);opacity:0.45;letter-spacing:0.03em;}
 .lp-motto{margin-top:44px;font-family:var(--ff-d);font-size:9px;letter-spacing:0.25em;color:var(--gold);opacity:0.25;text-transform:uppercase;}
-.rp{background:var(--bd);padding:48px 40px 80px;min-height:calc(100vh - 68px);overflow-y:auto;width:100%;}
+.rp{background:var(--bd);padding:48px auto 80px;min-height:calc(100vh - 68px);width:100%;max-width:680px;margin:0 auto;padding:48px 40px 80px;}
 .pb{display:flex;align-items:center;margin-bottom:12px;}
 .pb-c{width:34px;height:34px;border-radius:50%;border:1px solid rgba(197,160,89,0.18);display:flex;align-items:center;justify-content:center;font-family:var(--ff-u);font-size:11px;color:var(--cream);opacity:0.3;flex-shrink:0;transition:all 0.35s;position:relative;}
 .pb-c.active{border-color:var(--gold);color:var(--gold);opacity:1;background:rgba(197,160,89,0.07);box-shadow:0 0 0 5px rgba(197,160,89,0.05);}
@@ -111,30 +111,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .bc-cat{font-family:var(--ff-u);font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);opacity:0.55;margin-bottom:6px;}
 .bc-title{font-family:var(--ff-d);font-size:12px;color:var(--cream);line-height:1.45;margin-bottom:7px;}
 .bc-r{font-family:var(--ff-u);font-size:9px;color:var(--gold);opacity:0.55;}
-@media(max-width:960px){.shell{grid-template-columns:1fr;display:block;}.lp{display:none !important;}.rp{padding:32px 20px 60px;}}
+@media(max-width:1100px){.shell{grid-template-columns:1fr;display:block;}.lp{display:none !important;}.rp{padding:32px 20px 60px;}}
 @media(max-width:480px){.sgrid{grid-template-columns:1fr;}.fr2{grid-template-columns:1fr;}.bg{grid-template-columns:1fr;}.br{flex-direction:column;}.bp,.bs{width:100%;text-align:center;justify-content:center;}}
 </style>
 </head>
 <body>
 <nav>
-  <a href="/" class="nl"><img src="VEXT%20AUDIT%20CAPITAL%20LOGO.jpeg" alt="Vext Audit Capital" class="ni"/><div><div class="nm">VEXT AUDIT CAPITAL</div><div class="ns">Prudentia · Integritas · Fidelitas</div></div></a>
+  <a href="/" class="nl"><div><div class="nm">VEXT AUDIT CAPITAL</div><div class="ns">Prudentia · Integritas · Fidelitas</div></div></a>
   <a href="/" class="nb">← Return to site</a>
 </nav>
 <div class="shell">
-  <div class="lp">
-    <img src="VEXT%20AUDIT%20CAPITAL%20LOGO.jpeg" alt="Vext Audit Capital" class="lp-seal"/>
-    <span class="lp-ey">Client Onboarding</span>
-    <h1 class="lp-h1">Precision audit.<br/><em>Zero compromise.</em></h1>
-    <p class="lp-p">Complete your details before proceeding to secure payment. This takes under 3 minutes and allows us to begin your engagement immediately.</p>
-    <div class="ti">
-      <div class="ti-row"><div class="ti-dot"></div><span class="ti-txt">All information is strictly confidential</span></div>
-      <div class="ti-row"><div class="ti-dot"></div><span class="ti-txt">Payment secured by Razorpay · PCI-DSS Level 1</span></div>
-      <div class="ti-row"><div class="ti-dot"></div><span class="ti-txt">Engagement letter within 2 hours of payment</span></div>
-      <div class="ti-row"><div class="ti-dot"></div><span class="ti-txt">30-day post-delivery support included</span></div>
-      <div class="ti-row"><div class="ti-dot"></div><span class="ti-txt">Fixed fee — no surprises, no hourly billing</span></div>
-      <div class="ti-row"><div class="ti-dot"></div><span class="ti-txt">Response to all queries within 2 business hours</span></div>
-    </div>
-    <p class="lp-motto">Prudentia · Integritas · Fidelitas</p>
   </div>
   <div class="rp" id="rp">
     <!-- PROGRESS BAR -->
@@ -381,20 +367,24 @@ async function pay(){
   btn.textContent='Redirecting to payment...';
   setTimeout(function(){window.location.href=S.lnk;},900);
 }
-// Robust click handler for service cards — works on all devices
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.sc').forEach(function(card) {
-    ['click','touchend'].forEach(function(evt) {
-      card.addEventListener(evt, function(e) {
-        if(evt==='touchend') e.preventDefault();
-        var svc=card.getAttribute('data-svc');
-        var amt=card.getAttribute('data-amt');
-        var lnk=card.getAttribute('data-lnk');
-        if(svc) sel(card,svc,amt,lnk);
-      }, {passive:false});
+// Service card click handler
+function bindCards(){
+  document.querySelectorAll('.sc').forEach(function(card){
+    card.style.cursor='pointer';
+    card.addEventListener('click',function(e){
+      e.stopPropagation();
+      var svc=this.getAttribute('data-svc');
+      var amt=this.getAttribute('data-amt');
+      var lnk=this.getAttribute('data-lnk');
+      if(svc) sel(this,svc,amt,lnk);
     });
   });
-});
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',bindCards);
+} else {
+  bindCards();
+}
 
 (function init(){
   var p=new URLSearchParams(window.location.search);
