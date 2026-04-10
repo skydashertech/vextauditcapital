@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Get Started — Vext Audit Capital</title>
+<meta name="description" content="Start your audit engagement with Vext Audit Capital. Complete your details and proceed to secure payment."/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--cream:#F5F5DC;--gold:#C5A059;--gold-light:#D4B878;--bd:#2D0808;--bl:#4A0E0E;--ff-d:'Cinzel',serif;--ff-b:'Cormorant Garamond',serif;--ff-u:'Jost',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bd);color:var(--cream);font-family:var(--ff-b);font-size:18px;line-height:1.7;overflow-x:hidden;min-height:100vh;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 5%;background:rgba(29,4,4,0.97);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(197,160,89,0.2);}
+.nl{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.ni{width:44px;height:44px;border-radius:50%;object-fit:cover;}
+.nm{font-family:var(--ff-d);font-size:13px;font-weight:600;color:var(--gold);letter-spacing:0.16em;line-height:1;}
+.ns{font-family:var(--ff-u);font-size:8px;color:var(--cream);opacity:0.4;letter-spacing:0.22em;text-transform:uppercase;margin-top:4px;}
+.nb{font-family:var(--ff-u);font-size:11px;color:var(--cream);opacity:0.6;text-decoration:none;letter-spacing:0.14em;text-transform:uppercase;}
+.nb:hover{opacity:1;color:var(--gold);}
+
+.page{max-width:680px;margin:0 auto;padding:120px 5% 80px;}
+
+/* Progress bar */
+.progress-wrap{margin-bottom:44px;}
+.progress-steps{display:flex;align-items:center;gap:0;margin-bottom:10px;}
+.ps{display:flex;align-items:center;flex:1;}
+.ps-circle{width:32px;height:32px;border-radius:50%;border:1px solid rgba(197,160,89,0.3);display:flex;align-items:center;justify-content:center;font-family:var(--ff-u);font-size:11px;color:var(--cream);opacity:0.4;flex-shrink:0;transition:all 0.3s;}
+.ps-circle.active{border-color:var(--gold);color:var(--gold);opacity:1;background:rgba(197,160,89,0.1);}
+.ps-circle.done{border-color:var(--gold);background:var(--gold);color:var(--bd);opacity:1;}
+.ps-line{flex:1;height:0.5px;background:rgba(197,160,89,0.2);}
+.ps-line.done{background:var(--gold);}
+.progress-labels{display:flex;justify-content:space-between;}
+.pl{font-family:var(--ff-u);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--cream);opacity:0.35;text-align:center;flex:1;}
+.pl.active{opacity:0.8;color:var(--gold);}
+
+/* Step panels */
+.step-panel{display:none;}
+.step-panel.active{display:block;}
+
+.step-eyebrow{font-family:var(--ff-u);font-size:10px;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:16px;display:block;}
+.step-h2{font-family:var(--ff-d);font-size:clamp(22px,3.5vw,36px);font-weight:600;color:var(--cream);letter-spacing:0.04em;margin-bottom:8px;line-height:1.2;}
+.step-h2 span{color:var(--gold);}
+.step-desc{font-family:var(--ff-b);font-size:16px;font-weight:300;color:var(--cream);opacity:0.6;margin-bottom:36px;line-height:1.7;font-style:italic;}
+
+/* Service selector */
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px;}
+.service-opt{padding:16px 18px;border:0.5px solid rgba(197,160,89,0.2);cursor:pointer;transition:all 0.2s;position:relative;}
+.service-opt:hover{border-color:rgba(197,160,89,0.5);background:rgba(197,160,89,0.04);}
+.service-opt.selected{border-color:var(--gold);background:rgba(197,160,89,0.08);}
+.service-opt.selected::after{content:'✓';position:absolute;top:10px;right:12px;font-family:var(--ff-u);font-size:11px;color:var(--gold);}
+.svc-name{font-family:var(--ff-d);font-size:13px;color:var(--cream);margin-bottom:4px;letter-spacing:0.04em;}
+.svc-price{font-family:var(--ff-u);font-size:11px;color:var(--gold);opacity:0.7;}
+
+/* Form fields */
+.form-section{margin-bottom:32px;}
+.form-section-title{font-family:var(--ff-d);font-size:13px;color:var(--gold);letter-spacing:0.1em;opacity:0.7;margin-bottom:16px;padding-bottom:8px;border-bottom:0.5px solid rgba(197,160,89,0.15);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.form-row.single{grid-template-columns:1fr;}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.fg label{font-family:var(--ff-u);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cream);opacity:0.45;}
+.fg label span{color:rgba(197,160,89,0.6);margin-left:2px;}
+.fg input,.fg select,.fg textarea{background:rgba(245,245,220,0.05);border:0.5px solid rgba(197,160,89,0.25);color:var(--cream);font-family:var(--ff-b);font-size:16px;padding:12px 15px;outline:none;transition:border-color 0.2s,background 0.2s;width:100%;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(245,245,220,0.08);}
+.fg select option{background:var(--bd);color:var(--cream);}
+.fg textarea{resize:vertical;min-height:90px;}
+.optional-note{font-family:var(--ff-u);font-size:10px;color:var(--cream);opacity:0.35;margin-bottom:16px;font-style:italic;}
+
+/* Date group */
+.date-hint{font-family:var(--ff-u);font-size:10px;color:var(--cream);opacity:0.35;margin-top:4px;letter-spacing:0.05em;}
+
+/* Buttons */
+.btn-next{font-family:var(--ff-u);font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold);color:var(--bd);border:none;padding:16px 44px;cursor:pointer;transition:background 0.2s,transform 0.15s;display:inline-block;margin-top:8px;}
+.btn-next:hover{background:var(--gold-light);transform:translateY(-1px);}
+.btn-next:disabled{opacity:0.35;cursor:not-allowed;transform:none;}
+.btn-back{font-family:var(--ff-u);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;background:transparent;color:var(--cream);opacity:0.5;border:0.5px solid rgba(245,245,220,0.2);padding:16px 28px;cursor:pointer;transition:all 0.2s;margin-right:12px;}
+.btn-back:hover{opacity:1;border-color:var(--gold);color:var(--gold);}
+
+/* Summary box */
+.summary-box{border:0.5px solid rgba(197,160,89,0.3);padding:22px 24px;margin-bottom:28px;background:rgba(197,160,89,0.04);}
+.sb-row{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:0.5px solid rgba(197,160,89,0.1);}
+.sb-row:last-child{border-bottom:none;padding-bottom:0;}
+.sb-label{font-family:var(--ff-u);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--cream);opacity:0.45;}
+.sb-val{font-family:var(--ff-b);font-size:16px;color:var(--cream);opacity:0.85;text-align:right;max-width:60%;}
+.sb-val.gold{color:var(--gold);font-size:18px;font-weight:500;}
+
+/* Thank you state */
+.ty-wrap{text-align:center;padding:40px 0;}
+.ty-check{width:72px;height:72px;border:1px solid var(--gold);border-radius:50%;margin:0 auto 32px;display:flex;align-items:center;justify-content:center;}
+.ty-h1{font-family:var(--ff-d);font-size:clamp(26px,4vw,42px);color:var(--gold);letter-spacing:0.06em;margin-bottom:16px;}
+.ty-p{font-family:var(--ff-b);font-size:18px;font-weight:300;color:var(--cream);opacity:0.72;line-height:1.8;margin-bottom:12px;}
+.ty-next{border:0.5px solid rgba(197,160,89,0.25);padding:28px;margin:36px 0;text-align:left;}
+.ty-next-title{font-family:var(--ff-u);font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);opacity:0.7;margin-bottom:18px;}
+.ty-step{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;}
+.ty-step-num{font-family:var(--ff-d);font-size:13px;color:var(--gold);opacity:0.5;min-width:24px;margin-top:2px;}
+.ty-step-text{font-family:var(--ff-b);font-size:16px;color:var(--cream);opacity:0.72;line-height:1.65;}
+.ty-blog{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;}
+.ty-article{border:0.5px solid rgba(197,160,89,0.18);padding:16px 14px;text-decoration:none;display:block;transition:border-color 0.2s,background 0.2s;}
+.ty-article:hover{border-color:rgba(197,160,89,0.45);background:rgba(197,160,89,0.06);}
+.ty-art-cat{font-family:var(--ff-u);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.65;margin-bottom:7px;}
+.ty-art-title{font-family:var(--ff-d);font-size:13px;color:var(--cream);line-height:1.45;margin-bottom:8px;}
+.ty-art-read{font-family:var(--ff-u);font-size:10px;color:var(--gold);opacity:0.65;}
+
+@media(max-width:600px){.service-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.ty-blog{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><a href="/" class="nl"><img src="VEXT AUDIT CAPITAL LOGO.jpeg" alt="Vext Audit Capital" class="ni"/><div><div class="nm">VEXT AUDIT CAPITAL</div><div class="ns">Prudentia · Integritas · Fidelitas</div></div></a><a href="/" class="nb">← Back to Home</a></nav>
+
+<div class="page">
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="progress-steps">
+      <div class="ps"><div class="ps-circle active" id="pc1">1</div><div class="ps-line" id="pl1"></div></div>
+      <div class="ps"><div class="ps-circle" id="pc2">2</div><div class="ps-line" id="pl2"></div></div>
+      <div class="ps"><div class="ps-circle" id="pc3">3</div><div class="ps-line" id="pl3" style="display:none"></div></div>
+      <div class="ps" style="flex:0"><div class="ps-circle" id="pc4">4</div></div>
+    </div>
+    <div class="progress-labels">
+      <div class="pl active" id="pl-lbl1">Service</div>
+      <div class="pl" id="pl-lbl2">Your Details</div>
+      <div class="pl" id="pl-lbl3">Relationship</div>
+      <div class="pl" id="pl-lbl4">Payment</div>
+    </div>
+  </div>
+
+  <!-- STEP 1: SERVICE SELECTION -->
+  <div class="step-panel active" id="step1">
+    <span class="step-eyebrow">Step 1 of 4</span>
+    <h2 class="step-h2">Select your <span>service</span></h2>
+    <p class="step-desc">Choose the engagement you'd like to start. You'll be taken to secure payment after completing your details.</p>
+
+    <div class="service-grid">
+      <div class="service-opt" onclick="selectService(this,'GST Audit & Compliance','25000','https://rzp.io/rzp/qUnhJXU')">
+        <div class="svc-name">GST Audit & Compliance</div>
+        <div class="svc-price">Starting ₹25,000</div>
+      </div>
+      <div class="service-opt" onclick="selectService(this,'DPDP Readiness Assessment','40000','https://rzp.io/rzp/CKw3iku')">
+        <div class="svc-name">DPDP Readiness Assessment</div>
+        <div class="svc-price">Starting ₹40,000</div>
+      </div>
+      <div class="service-opt" onclick="selectService(this,'Financial Operations Audit','30000','https://rzp.io/rzp/Uvu5SXI')">
+        <div class="svc-name">Financial Operations Audit</div>
+        <div class="svc-price">Starting ₹30,000</div>
+      </div>
+      <div class="service-opt" onclick="selectService(this,'IT & Cybersecurity Audit','50000','https://rzp.io/rzp/DzlcxHtS')">
+        <div class="svc-name">IT & Cybersecurity Audit</div>
+        <div class="svc-price">Starting ₹50,000</div>
+      </div>
+      <div class="service-opt" onclick="selectService(this,'Export Compliance Review','20000','https://rzp.io/rzp/qUnhJXU')">
+        <div class="svc-name">Export Compliance Review</div>
+        <div class="svc-price">Starting ₹20,000</div>
+      </div>
+      <div class="service-opt" onclick="selectService(this,'Full Audit Bundle','75000','https://rzp.io/rzp/bNccdbw')">
+        <div class="svc-name">Full Audit Bundle</div>
+        <div class="svc-price">₹75,000</div>
+      </div>
+      <div class="service-opt" onclick="selectService(this,'VextIntel Monthly Retainer','15000','https://rzp.io/rzp/8zkeaNT5')">
+        <div class="svc-name">VextIntel Monthly Retainer</div>
+        <div class="svc-price">₹15,000 / month</div>
+      </div>
+      <div class="service-opt" onclick="selectService(this,'VextIntel Annual Retainer','150000','https://rzp.io/rzp/lYCq77V')">
+        <div class="svc-name">VextIntel Annual Retainer</div>
+        <div class="svc-price">₹1,50,000 / year</div>
+      </div>
+    </div>
+    <button class="btn-next" id="btn-step1" disabled onclick="goStep(2)">Continue →</button>
+  </div>
+
+  <!-- STEP 2: BUSINESS & CONTACT DETAILS -->
+  <div class="step-panel" id="step2">
+    <span class="step-eyebrow">Step 2 of 4</span>
+    <h2 class="step-h2">Your <span>details</span></h2>
+    <p class="step-desc">We need this to prepare your engagement letter and keep you informed throughout.</p>
+
+    <div class="form-section">
+      <div class="form-section-title">Personal details</div>
+      <div class="form-row">
+        <div class="fg"><label>Full Name <span>*</span></label><input type="text" id="f-name" placeholder="Your full name" required oninput="checkStep2()"/></div>
+        <div class="fg"><label>Designation</label><input type="text" id="f-desig" placeholder="CEO / CFO / Director"/></div>
+      </div>
+      <div class="form-row">
+        <div class="fg"><label>Email <span>*</span></label><input type="email" id="f-email" placeholder="your@company.com" required oninput="checkStep2()"/></div>
+        <div class="fg"><label>Phone <span>*</span></label><input type="tel" id="f-phone" placeholder="+91 or international" required oninput="checkStep2()"/></div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="form-section-title">Business details</div>
+      <div class="form-row">
+        <div class="fg"><label>Company / Entity Name <span>*</span></label><input type="text" id="f-company" placeholder="Legal entity name" required oninput="checkStep2()"/></div>
+        <div class="fg"><label>Country <span>*</span></label>
+          <select id="f-country" required onchange="checkStep2()">
+            <option value="">Select country</option>
+            <option>India</option><option>United States</option><option>United Kingdom</option>
+            <option>UAE</option><option>Singapore</option><option>Australia</option>
+            <option>Canada</option><option>Germany</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="fg"><label>GST Number</label><input type="text" id="f-gst" placeholder="22AAAAA0000A1Z5 (India only)"/></div>
+        <div class="fg"><label>Industry</label>
+          <select id="f-industry">
+            <option value="">Select industry</option>
+            <option>Manufacturing</option><option>Technology / IT</option><option>Healthcare</option>
+            <option>Retail / E-commerce</option><option>Financial Services</option><option>Real Estate</option>
+            <option>Export / Import</option><option>Education</option><option>Professional Services</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg form-row single"><label>How did you hear about us?</label>
+        <select id="f-source">
+          <option value="">Select source</option>
+          <option>LinkedIn</option><option>Google Search</option><option>Referral</option>
+          <option>Cold Email</option><option>WhatsApp</option><option>Other</option>
+        </select>
+      </div>
+      <div class="fg"><label>Message / Special requirements</label><textarea id="f-message" placeholder="Any specific compliance challenges or requirements we should know about..."></textarea></div>
+    </div>
+
+    <div>
+      <button class="btn-back" onclick="goStep(1)">← Back</button>
+      <button class="btn-next" id="btn-step2" disabled onclick="goStep(3)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: RELATIONSHIP DATA -->
+  <div class="step-panel" id="step3">
+    <span class="step-eyebrow">Step 3 of 4 — Optional but appreciated</span>
+    <h2 class="step-h2">Help us <span>know you better</span></h2>
+    <p class="step-desc">We believe great professional relationships go beyond business. Share what you're comfortable with — we'll remember what matters to you.</p>
+    <p class="optional-note">All fields on this page are completely optional. This information is used only to send personal greetings — never shared or used for any other purpose.</p>
+
+    <div class="form-section">
+      <div class="form-section-title">Your personal dates</div>
+      <div class="form-row">
+        <div class="fg">
+          <label>Your Birthday</label>
+          <input type="date" id="r-bday" placeholder="DD/MM/YYYY"/>
+          <div class="date-hint">We'll send you warm wishes on your day</div>
+        </div>
+        <div class="fg">
+          <label>Wedding Anniversary</label>
+          <input type="date" id="r-anni"/>
+          <div class="date-hint">We'll celebrate this milestone with you</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="form-section-title">Spouse / Partner</div>
+      <div class="form-row">
+        <div class="fg"><label>Spouse / Partner Name</label><input type="text" id="r-spouse" placeholder="First name"/></div>
+        <div class="fg"><label>Spouse Birthday</label><input type="date" id="r-spouse-bday"/></div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="form-section-title">Children</div>
+      <div id="children-wrap">
+        <div class="form-row" id="child-row-1">
+          <div class="fg"><label>Child 1 Name</label><input type="text" placeholder="First name" class="c-name"/></div>
+          <div class="fg"><label>Child 1 Birthday</label><input type="date" class="c-bday"/></div>
+        </div>
+      </div>
+      <button type="button" onclick="addChild()" style="font-family:var(--ff-u);font-size:11px;color:var(--gold);opacity:0.7;background:none;border:none;cursor:pointer;padding:4px 0;letter-spacing:0.1em;">+ Add another child</button>
+    </div>
+
+    <div class="form-section">
+      <div class="form-section-title">Parents</div>
+      <div class="form-row">
+        <div class="fg"><label>Father's Name</label><input type="text" id="r-father" placeholder="First name"/></div>
+        <div class="fg"><label>Father's Birthday</label><input type="date" id="r-father-bday"/></div>
+      </div>
+      <div class="form-row">
+        <div class="fg"><label>Mother's Name</label><input type="text" id="r-mother" placeholder="First name"/></div>
+        <div class="fg"><label>Mother's Birthday</label><input type="date" id="r-mother-bday"/></div>
+      </div>
+    </div>
+
+    <div>
+      <button class="btn-back" onclick="goStep(2)">← Back</button>
+      <button class="btn-next" onclick="goStep(4)">Review & Pay →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: REVIEW & PAY -->
+  <div class="step-panel" id="step4">
+    <span class="step-eyebrow">Step 4 of 4</span>
+    <h2 class="step-h2">Review & <span>Pay</span></h2>
+    <p class="step-desc">Everything looks good? Proceed to secure payment via Razorpay.</p>
+
+    <div class="summary-box">
+      <div class="sb-row"><span class="sb-label">Service</span><span class="sb-val" id="s-service">—</span></div>
+      <div class="sb-row"><span class="sb-label">Name</span><span class="sb-val" id="s-name">—</span></div>
+      <div class="sb-row"><span class="sb-label">Company</span><span class="sb-val" id="s-company">—</span></div>
+      <div class="sb-row"><span class="sb-label">Email</span><span class="sb-val" id="s-email">—</span></div>
+      <div class="sb-row"><span class="sb-label">Phone</span><span class="sb-val" id="s-phone">—</span></div>
+      <div class="sb-row"><span class="sb-label">Country</span><span class="sb-val" id="s-country">—</span></div>
+      <div class="sb-row"><span class="sb-label">Amount</span><span class="sb-val gold" id="s-amount">—</span></div>
+    </div>
+
+    <p style="font-family:var(--ff-u);font-size:10px;color:var(--cream);opacity:0.35;margin-bottom:24px;line-height:1.7;">By proceeding, you agree to our <a href="terms.html" style="color:var(--gold);opacity:0.7;">Terms of Service</a> and <a href="refund.html" style="color:var(--gold);opacity:0.7;">Refund Policy</a>. Payment is processed securely by Razorpay. We do not store card or UPI details.</p>
+
+    <div>
+      <button class="btn-back" onclick="goStep(3)">← Back</button>
+      <button class="btn-next" id="btn-pay" onclick="submitAndPay()">Proceed to Payment →</button>
+    </div>
+  </div>
+
+  <!-- THANK YOU STATE (shown after payment return) -->
+  <div class="step-panel" id="step-ty">
+    <div class="ty-wrap">
+      <div class="ty-check">
+        <svg width="28" height="22" viewBox="0 0 28 22" fill="none"><path d="M2 11L10 19L26 3" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h1 class="ty-h1">Payment received.</h1>
+      <p class="ty-p">Welcome to Vext Audit Capital, <strong id="ty-name" style="color:var(--gold)"></strong>.</p>
+      <p class="ty-p" style="font-size:16px;">A welcome email has been sent to <strong id="ty-email" style="color:var(--gold)"></strong>. Our team will reach out within 2 business hours to begin your engagement.</p>
+
+      <div class="ty-next">
+        <div class="ty-next-title">What happens next</div>
+        <div class="ty-step"><div class="ty-step-num">01</div><div class="ty-step-text">You will receive a welcome email within 60 seconds with your engagement details and primary advisor contact.</div></div>
+        <div class="ty-step"><div class="ty-step-num">02</div><div class="ty-step-text">Within 2 business hours, your advisor will send the engagement letter and document checklist.</div></div>
+        <div class="ty-step"><div class="ty-step-num">03</div><div class="ty-step-text">Once we receive your documents, the delivery clock starts. Your report will be delivered within the agreed timeline.</div></div>
+        <div class="ty-step"><div class="ty-step-num">04</div><div class="ty-step-text">You have 30 days of free post-delivery support. We are reachable at support&#64;vextaudit&#46;com at any time.</div></div>
+      </div>
+
+      <p style="font-family:var(--ff-u);font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);opacity:0.7;margin-bottom:18px;">While you wait — read our latest intelligence</p>
+      <div class="ty-blog">
+        <a href="https://vextaudit.com/blog/gst-2026" target="_blank" class="ty-article">
+          <div class="ty-art-cat">GST · April 2026</div>
+          <div class="ty-art-title">5 GST changes every business must know in FY 2026-27</div>
+          <div class="ty-art-read">4 min read →</div>
+        </a>
+        <a href="https://vextaudit.com/blog/dpdp-ready" target="_blank" class="ty-article">
+          <div class="ty-art-cat">DPDP · April 2026</div>
+          <div class="ty-art-title">Is your business DPDP-ready? The 7 questions to answer now</div>
+          <div class="ty-art-read">5 min read →</div>
+        </a>
+        <a href="https://vextaudit.com/blog/iso27001" target="_blank" class="ty-article">
+          <div class="ty-art-cat">IT Audit · April 2026</div>
+          <div class="ty-art-title">Why ISO 27001 alone is no longer enough</div>
+          <div class="ty-art-read">6 min read →</div>
+        </a>
+        <a href="https://rzp.io/rzp/8zkeaNT5" target="_blank" class="ty-article" style="border-color:rgba(197,160,89,0.4);background:rgba(197,160,89,0.06);">
+          <div class="ty-art-cat">VextIntel · Monthly</div>
+          <div class="ty-art-title" style="color:var(--gold);">Subscribe to VextIntel — never miss a change</div>
+          <div class="ty-art-read" style="opacity:1;">Subscribe now →</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// State
+var state = { service:'', amount:'', payLink:'', step:1 };
+var childCount = 1;
+
+// Service selection
+function selectService(el, name, amount, link) {
+  document.querySelectorAll('.service-opt').forEach(function(o){ o.classList.remove('selected'); });
+  el.classList.add('selected');
+  state.service = name;
+  state.amount = amount;
+  state.payLink = link;
+  document.getElementById('btn-step1').disabled = false;
+}
+
+// Step navigation
+function goStep(n) {
+  document.querySelectorAll('.step-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('step'+n).classList.add('active');
+  state.step = n;
+  updateProgress(n);
+  if (n === 4) fillSummary();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress(n) {
+  for (var i = 1; i <= 4; i++) {
+    var c = document.getElementById('pc'+i);
+    var l = document.getElementById('pl-lbl'+i);
+    c.classList.remove('active','done');
+    if (l) l.classList.remove('active');
+    if (i < n) { c.classList.add('done'); c.innerHTML = '✓'; }
+    else if (i === n) { c.classList.add('active'); c.textContent = i; if(l) l.classList.add('active'); }
+    else { c.textContent = i; }
+    var line = document.getElementById('pl'+(i));
+    if (line) line.classList.toggle('done', i < n);
+  }
+}
+
+// Step 2 validation
+function checkStep2() {
+  var ok = document.getElementById('f-name').value.trim().length > 1
+        && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('f-email').value.trim())
+        && document.getElementById('f-phone').value.trim().length > 5
+        && document.getElementById('f-company').value.trim().length > 1
+        && document.getElementById('f-country').value !== '';
+  var btn = document.getElementById('btn-step2');
+  btn.disabled = !ok;
+}
+
+// Fill review summary
+function fillSummary() {
+  var amt = parseInt(state.amount);
+  var fmt = '₹' + amt.toLocaleString('en-IN');
+  document.getElementById('s-service').textContent = state.service;
+  document.getElementById('s-name').textContent = document.getElementById('f-name').value;
+  document.getElementById('s-company').textContent = document.getElementById('f-company').value;
+  document.getElementById('s-email').textContent = document.getElementById('f-email').value;
+  document.getElementById('s-phone').textContent = document.getElementById('f-phone').value;
+  document.getElementById('s-country').textContent = document.getElementById('f-country').value;
+  document.getElementById('s-amount').textContent = fmt;
+}
+
+// Add child row
+function addChild() {
+  childCount++;
+  var wrap = document.getElementById('children-wrap');
+  var row = document.createElement('div');
+  row.className = 'form-row';
+  row.id = 'child-row-'+childCount;
+  row.innerHTML = '<div class="fg"><label>Child '+childCount+' Name</label><input type="text" placeholder="First name" class="c-name"/></div><div class="fg"><label>Child '+childCount+' Birthday</label><input type="date" class="c-bday"/></div>';
+  wrap.appendChild(row);
+}
+
+// Submit — save to localStorage, send to Web3Forms, redirect to Razorpay
+async function submitAndPay() {
+  var btn = document.getElementById('btn-pay');
+  btn.textContent = 'Saving your details...';
+  btn.disabled = true;
+
+  // Collect all data
+  var children = [];
+  document.querySelectorAll('.c-name').forEach(function(n, i){
+    var bday = document.querySelectorAll('.c-bday')[i];
+    if (n.value.trim()) children.push({ name: n.value.trim(), bday: bday ? bday.value : '' });
+  });
+
+  var clientData = {
+    service: state.service,
+    amount: state.amount,
+    name: document.getElementById('f-name').value.trim(),
+    designation: document.getElementById('f-desig').value.trim(),
+    email: document.getElementById('f-email').value.trim(),
+    phone: document.getElementById('f-phone').value.trim(),
+    company: document.getElementById('f-company').value.trim(),
+    country: document.getElementById('f-country').value,
+    gst: document.getElementById('f-gst').value.trim(),
+    industry: document.getElementById('f-industry').value,
+    source: document.getElementById('f-source').value,
+    message: document.getElementById('f-message').value.trim(),
+    birthday: document.getElementById('r-bday').value,
+    anniversary: document.getElementById('r-anni').value,
+    spouse: document.getElementById('r-spouse').value.trim(),
+    spouseBday: document.getElementById('r-spouse-bday').value,
+    father: document.getElementById('r-father').value.trim(),
+    fatherBday: document.getElementById('r-father-bday').value,
+    mother: document.getElementById('r-mother').value.trim(),
+    motherBday: document.getElementById('r-mother-bday').value,
+    children: children,
+    timestamp: new Date().toISOString()
+  };
+
+  // Send to Web3Forms (goes to support@vextaudit.com)
+  var formData = new FormData();
+  formData.append('access_key', '83cc3e63-fbee-43e4-ba81-a074039de80b');
+  formData.append('subject', 'New Client Intake — ' + clientData.service + ' — ' + clientData.name);
+  formData.append('from_name', 'Vext Audit Capital Intake Form');
+  formData.append('name', clientData.name);
+  formData.append('email', clientData.email);
+  formData.append('message',
+    'SERVICE: ' + clientData.service + '\n' +
+    'AMOUNT: ₹' + parseInt(clientData.amount).toLocaleString('en-IN') + '\n\n' +
+    'NAME: ' + clientData.name + ' (' + clientData.designation + ')\n' +
+    'EMAIL: ' + clientData.email + '\n' +
+    'PHONE: ' + clientData.phone + '\n' +
+    'COMPANY: ' + clientData.company + '\n' +
+    'COUNTRY: ' + clientData.country + '\n' +
+    'GST: ' + (clientData.gst || 'Not provided') + '\n' +
+    'INDUSTRY: ' + (clientData.industry || 'Not specified') + '\n' +
+    'SOURCE: ' + (clientData.source || 'Not specified') + '\n\n' +
+    'MESSAGE: ' + (clientData.message || 'None') + '\n\n' +
+    '── RELATIONSHIP DATA ──\n' +
+    'BIRTHDAY: ' + (clientData.birthday || 'Not provided') + '\n' +
+    'ANNIVERSARY: ' + (clientData.anniversary || 'Not provided') + '\n' +
+    'SPOUSE: ' + (clientData.spouse || 'Not provided') + ' | Bday: ' + (clientData.spouseBday || 'N/A') + '\n' +
+    'FATHER: ' + (clientData.father || 'N/A') + ' | Bday: ' + (clientData.fatherBday || 'N/A') + '\n' +
+    'MOTHER: ' + (clientData.mother || 'N/A') + ' | Bday: ' + (clientData.motherBday || 'N/A') + '\n' +
+    'CHILDREN: ' + (clientData.children.length ? JSON.stringify(clientData.children) : 'None') + '\n\n' +
+    'Submitted: ' + clientData.timestamp
+  );
+
+  try {
+    await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+  } catch(e) {}
+
+  // Store for thank you page
+  sessionStorage.setItem('vac_client', JSON.stringify(clientData));
+
+  // Redirect to Razorpay
+  btn.textContent = 'Redirecting to payment...';
+  setTimeout(function() {
+    window.location.href = state.payLink;
+  }, 800);
+}
+
+// Check if returning from payment (thank you mode)
+function checkThankYou() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var stored = sessionStorage.getItem('vac_client');
+  if (urlParams.get('payment') === 'success' || urlParams.get('status') === 'paid') {
+    showThankYou(stored ? JSON.parse(stored) : null);
+    return;
+  }
+  // Also check if service is pre-selected via URL param
+  var svc = urlParams.get('service');
+  if (svc) {
+    var opts = document.querySelectorAll('.service-opt');
+    opts.forEach(function(o) {
+      if (o.querySelector('.svc-name').textContent.toLowerCase().indexOf(svc.toLowerCase()) !== -1) {
+        o.click();
+      }
+    });
+  }
+}
+
+function showThankYou(data) {
+  document.querySelectorAll('.step-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('step-ty').classList.add('active');
+  document.querySelector('.progress-wrap').style.display = 'none';
+  if (data) {
+    document.getElementById('ty-name').textContent = data.name.split(' ')[0];
+    document.getElementById('ty-email').textContent = data.email;
+  }
+}
+
+// Init
+checkThankYou();
+</script>
+</body></html>

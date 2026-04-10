@@ -453,7 +453,7 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
         <div class="vi-feature"><h4>Priority Audit Access</h4><p>VextIntel subscribers receive priority scheduling for full audit engagements, with locked pricing and faster turnaround.</p></div>
       </div>
       <div class="vextintel-price"><span>₹15,000</span> / month · Annual billing saves 2 months</div>
-      <a href="#contact" class="btn-primary">Subscribe to VextIntel</a>
+      <a href="onboard.html?service=vextintel" class="btn-primary">Subscribe to VextIntel</a>
     </div>
   </div>
 </section>
@@ -496,7 +496,7 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
         <li>30-day post-delivery support</li>
         <li>Compliance calendar included</li>
       </ul>
-      <a href="https://rzp.io/rzp/qUnhJXU" target="_blank" class="btn-ghost" style="display:inline-block;">Pay Now</a>
+      <a href="onboard.html?service=gst" class="btn-ghost" style="display:inline-block;">Get Started</a>
     </div>
     <div class="price-card featured fade-up fade-up-delay-1">
       <div class="price-tier">Professional</div>
@@ -510,7 +510,7 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
         <li>1 month VextIntel included</li>
         <li>Dedicated advisor access</li>
       </ul>
-      <a href="https://rzp.io/rzp/bNccdbw" target="_blank" class="btn-primary" style="display:inline-block;">Pay Now</a>
+      <a href="onboard.html?service=bundle" class="btn-primary" style="display:inline-block;">Get Started</a>
     </div>
     <div class="price-card fade-up fade-up-delay-2">
       <div class="price-tier">Enterprise</div>
@@ -524,7 +524,7 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
         <li>All service lines covered</li>
         <li>Priority response SLA</li>
       </ul>
-      <a href="https://rzp.io/rzp/lYCq77V" target="_blank" class="btn-ghost" style="display:inline-block;">Pay Now</a>
+      <a href="onboard.html?service=vextintel" class="btn-ghost" style="display:inline-block;">Get Started</a>
     </div>
   </div>
   <p class="pricing-note fade-up">All prices exclusive of applicable taxes. USD pricing available for international clients. Custom bundles for group engagements on request.</p>
@@ -737,7 +737,7 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#d1a2a4a1a1bea3a5f7f2e7e5eaa7b4a9a5b0a4b5b8a5f7f2e5e7eab2bebc">support&#64;vextaudit&#46;com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#8af9fffafae5f8feaca9bcbeb1fceff2feebffeee3feaca9bebcb1e9e5e7">support&#64;vextaudit&#46;com</a></li>
         <li><a href="#contact">Book Consultation</a></li>
         <li><a href="https://vextaudit.com">vextaudit.com</a></li>
       </ul>
@@ -749,7 +749,7 @@ footer { background: var(--burgundy-dark); border-top: 0.5px solid rgba(197,160,
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const obs = new IntersectionObserver(e => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); }), { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 window.addEventListener('scroll', () => {
@@ -908,10 +908,4 @@ async function handleSubmit(e) {
       if (ce) ce.textContent = email;
     } else {
       btn.textContent = 'Something went wrong — try again';
-      btn.style.opacity = '1';
-      btn.disabled = false;
-      enableSubmit(true);
-    }
-  } catch(err) {
-    document.getElementById('form-wrap').style.
-</body></html>
+      btn.
