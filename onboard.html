@@ -376,6 +376,7 @@ async function pay(){
     '── RELATIONSHIP DATA ──\nBirthday:    '+(d.bday||'—')+'\nAnniversary: '+(d.anni||'—')+'\nSpouse:      '+(d.spouse||'—')+(d.sbday?' · '+d.sbday:'')+'\nFather:      '+(d.father||'—')+(d.fbday?' · '+d.fbday:'')+'\nMother:      '+(d.mother||'—')+(d.mbday?' · '+d.mbday:'')+'\nChildren:    '+(ch.length?ch.map(function(c){return c.name+(c.bday?' ('+c.bday+')':'');}).join(', '):'—')+'\n\nSubmitted: '+d.ts
   );
   try{await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});}catch(e){}
+  try{await fetch('https://hook.eu1.make.com/9q9fkufeivyk59t47v5l7xejsp27xjv9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.name,designation:d.desig,email:d.email,phone:d.phone,company:d.company,country:d.country,gst:d.gst,industry:d.industry,source:d.source,service:d.svc,amount:d.amt,msg:d.msg,bday:d.bday,anni:d.anni,spouse:d.spouse,sbday:d.sbday,father:d.father,fbday:d.fbday,mother:d.mother,mbday:d.mbday,child1name:d.children[0]?d.children[0].name:'',child1bday:d.children[0]?d.children[0].bday:'',child2name:d.children[1]?d.children[1].name:'',child2bday:d.children[1]?d.children[1].bday:'',timestamp:d.ts})}));}catch(e){}
   try{sessionStorage.setItem('vac',JSON.stringify(d));}catch(e){}
   btn.textContent='Redirecting to payment...';
   setTimeout(function(){window.location.href=S.lnk;},900);
