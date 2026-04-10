@@ -18,7 +18,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .ns{font-family:var(--ff-u);font-size:7px;color:var(--cream);opacity:0.35;letter-spacing:0.22em;text-transform:uppercase;margin-top:3px;}
 .nb{font-family:var(--ff-u);font-size:10px;color:var(--cream);opacity:0.5;text-decoration:none;letter-spacing:0.14em;text-transform:uppercase;transition:opacity 0.2s,color 0.2s;}
 .nb:hover{opacity:1;color:var(--gold);}
-.shell{min-height:100vh;display:block;padding-top:0;}
+.shell{background:var(--bd);}
 .lp{display:none !important;}
 .lp-seal{width:68px;height:68px;border-radius:50%;object-fit:cover;margin-bottom:28px;opacity:0.9;display:block;position:relative;z-index:0;flex-shrink:0;}
 .lp-ey{font-family:var(--ff-u);font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);opacity:0.65;margin-bottom:16px;}
@@ -121,7 +121,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   <a href="/" class="nb">← Return to site</a>
 </nav>
 <div class="shell">
-  </div>
   <div class="rp" id="rp">
     <!-- PROGRESS BAR -->
     <div class="pb" id="pbar">
@@ -362,7 +361,7 @@ async function pay(){
     '── RELATIONSHIP DATA ──\nBirthday:    '+(d.bday||'—')+'\nAnniversary: '+(d.anni||'—')+'\nSpouse:      '+(d.spouse||'—')+(d.sbday?' · '+d.sbday:'')+'\nFather:      '+(d.father||'—')+(d.fbday?' · '+d.fbday:'')+'\nMother:      '+(d.mother||'—')+(d.mbday?' · '+d.mbday:'')+'\nChildren:    '+(ch.length?ch.map(function(c){return c.name+(c.bday?' ('+c.bday+')':'');}).join(', '):'—')+'\n\nSubmitted: '+d.ts
   );
   try{await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});}catch(e){}
-  try{await fetch('https://hook.eu1.make.com/9q9fkufeivyk59t47v5l7xejsp27xjv9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.name,designation:d.desig,email:d.email,phone:d.phone,company:d.company,country:d.country,gst:d.gst,industry:d.industry,source:d.source,service:d.svc,amount:d.amt,msg:d.msg,bday:d.bday,anni:d.anni,spouse:d.spouse,sbday:d.sbday,father:d.father,fbday:d.fbday,mother:d.mother,mbday:d.mbday,child1name:d.children[0]?d.children[0].name:'',child1bday:d.children[0]?d.children[0].bday:'',child2name:d.children[1]?d.children[1].name:'',child2bday:d.children[1]?d.children[1].bday:'',timestamp:d.ts})}));}catch(e){}
+  try{await fetch('https://hook.eu1.make.com/9q9fkufeivyk59t47v5l7xejsp27xjv9',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.name,designation:d.desig,email:d.email,phone:d.phone,company:d.company,country:d.country,gst:d.gst,industry:d.industry,source:d.source,service:d.svc,amount:d.amt,msg:d.msg,bday:d.bday,anni:d.anni,spouse:d.spouse,sbday:d.sbday,father:d.father,fbday:d.fbday,mother:d.mother,mbday:d.mbday,child1name:d.children[0]?d.children[0].name:'',child1bday:d.children[0]?d.children[0].bday:'',child2name:d.children[1]?d.children[1].name:'',child2bday:d.children[1]?d.children[1].bday:'',timestamp:d.ts})});}catch(e){}
   try{sessionStorage.setItem('vac',JSON.stringify(d));}catch(e){}
   btn.textContent='Redirecting to payment...';
   setTimeout(function(){window.location.href=S.lnk;},900);
