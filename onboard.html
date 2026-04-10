@@ -30,7 +30,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .ti-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;opacity:0.65;}
 .ti-txt{font-family:var(--ff-u);font-size:11px;color:var(--cream);opacity:0.45;letter-spacing:0.03em;}
 .lp-motto{margin-top:44px;font-family:var(--ff-d);font-size:9px;letter-spacing:0.25em;color:var(--gold);opacity:0.25;text-transform:uppercase;}
-.rp{background:var(--bd);padding:48px 40px 80px;min-height:calc(100vh - 68px);overflow-y:auto;}
+.rp{background:var(--bd);padding:48px 40px 80px;min-height:calc(100vh - 68px);overflow-y:auto;width:100%;}
 .pb{display:flex;align-items:center;margin-bottom:12px;}
 .pb-c{width:34px;height:34px;border-radius:50%;border:1px solid rgba(197,160,89,0.18);display:flex;align-items:center;justify-content:center;font-family:var(--ff-u);font-size:11px;color:var(--cream);opacity:0.3;flex-shrink:0;transition:all 0.35s;position:relative;}
 .pb-c.active{border-color:var(--gold);color:var(--gold);opacity:1;background:rgba(197,160,89,0.07);box-shadow:0 0 0 5px rgba(197,160,89,0.05);}
@@ -50,7 +50,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .sh2 span{color:var(--gold);}
 .sdesc{font-family:var(--ff-b);font-size:16px;font-weight:300;color:var(--cream);opacity:0.48;margin-bottom:28px;font-style:italic;line-height:1.75;}
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px;}
-.sc{padding:14px 15px 12px;border:0.5px solid rgba(197,160,89,0.14);cursor:pointer;transition:all 0.2s;position:relative;background:rgba(245,245,220,0.02);}
+.sc{padding:14px 15px 12px;border:0.5px solid rgba(197,160,89,0.14);cursor:pointer !important;transition:all 0.2s;position:relative;background:rgba(245,245,220,0.02);z-index:2;pointer-events:all !important;-webkit-tap-highlight-color:rgba(197,160,89,0.15);}
 .sc:hover{border-color:rgba(197,160,89,0.38);background:rgba(197,160,89,0.04);}
 .sc.sel{border-color:var(--gold);background:rgba(197,160,89,0.07);}
 .sc.sel::after{content:'✓';position:absolute;top:9px;right:11px;font-family:var(--ff-u);font-size:11px;font-weight:600;color:var(--gold);}
@@ -111,18 +111,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .bc-cat{font-family:var(--ff-u);font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);opacity:0.55;margin-bottom:6px;}
 .bc-title{font-family:var(--ff-d);font-size:12px;color:var(--cream);line-height:1.45;margin-bottom:7px;}
 .bc-r{font-family:var(--ff-u);font-size:9px;color:var(--gold);opacity:0.55;}
-@media(max-width:960px){.shell{grid-template-columns:1fr;}.lp{display:none;}.rp{padding:32px 20px 60px;}}
+@media(max-width:960px){.shell{grid-template-columns:1fr;display:block;}.lp{display:none !important;}.rp{padding:32px 20px 60px;}}
 @media(max-width:480px){.sgrid{grid-template-columns:1fr;}.fr2{grid-template-columns:1fr;}.bg{grid-template-columns:1fr;}.br{flex-direction:column;}.bp,.bs{width:100%;text-align:center;justify-content:center;}}
 </style>
 </head>
 <body>
 <nav>
-  <a href="/" class="nl"><img src="VEXT AUDIT CAPITAL LOGO.jpeg" alt="Vext Audit Capital" class="ni"/><div><div class="nm">VEXT AUDIT CAPITAL</div><div class="ns">Prudentia · Integritas · Fidelitas</div></div></a>
+  <a href="/" class="nl"><img src="VEXT%20AUDIT%20CAPITAL%20LOGO.jpeg" alt="Vext Audit Capital" class="ni"/><div><div class="nm">VEXT AUDIT CAPITAL</div><div class="ns">Prudentia · Integritas · Fidelitas</div></div></a>
   <a href="/" class="nb">← Return to site</a>
 </nav>
 <div class="shell">
   <div class="lp">
-    <img src="VEXT AUDIT CAPITAL LOGO.jpeg" alt="Vext Audit Capital" class="lp-seal"/>
+    <img src="VEXT%20AUDIT%20CAPITAL%20LOGO.jpeg" alt="Vext Audit Capital" class="lp-seal"/>
     <span class="lp-ey">Client Onboarding</span>
     <h1 class="lp-h1">Precision audit.<br/><em>Zero compromise.</em></h1>
     <p class="lp-p">Complete your details before proceeding to secure payment. This takes under 3 minutes and allows us to begin your engagement immediately.</p>
@@ -157,14 +157,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       <h2 class="sh2">Select your <span>service</span></h2>
       <p class="sdesc">Choose the engagement you'd like to begin. Scope and details can be refined with your advisor after payment.</p>
       <div class="sgrid">
-        <div class="sc" onclick="sel(this,'GST Audit & Compliance','25000','https://rzp.io/rzp/qUnhJXU')"><div class="sc-n">GST Audit &amp; Compliance</div><div class="sc-p">Starting ₹25,000</div></div>
-        <div class="sc" onclick="sel(this,'DPDP Readiness Assessment','40000','https://rzp.io/rzp/CKw3iku')"><div class="sc-n">DPDP Readiness Assessment</div><div class="sc-p">Starting ₹40,000</div></div>
-        <div class="sc" onclick="sel(this,'Financial Operations Audit','30000','https://rzp.io/rzp/Uvu5SXI')"><div class="sc-n">Financial Operations Audit</div><div class="sc-p">Starting ₹30,000</div></div>
-        <div class="sc" onclick="sel(this,'IT & Cybersecurity Audit','50000','https://rzp.io/rzp/DzlcxHtS')"><div class="sc-n">IT &amp; Cybersecurity Audit</div><div class="sc-p">Starting ₹50,000</div></div>
-        <div class="sc" onclick="sel(this,'Export Compliance Review','20000','https://rzp.io/rzp/qUnhJXU')"><div class="sc-n">Export Compliance Review</div><div class="sc-p">Starting ₹20,000</div></div>
-        <div class="sc" onclick="sel(this,'Full Audit Bundle','75000','https://rzp.io/rzp/bNccdbw')"><div class="sc-n">Full Audit Bundle</div><div class="sc-p">₹75,000 · Most Popular</div></div>
-        <div class="sc" onclick="sel(this,'VextIntel Monthly Retainer','15000','https://rzp.io/rzp/8zkeaNT5')"><div class="sc-n">VextIntel Monthly Retainer</div><div class="sc-p">₹15,000 / month</div></div>
-        <div class="sc" onclick="sel(this,'VextIntel Annual Retainer','150000','https://rzp.io/rzp/lYCq77V')"><div class="sc-n">VextIntel Annual Retainer</div><div class="sc-p">₹1,50,000 / year · Save 2 months</div></div>
+        <div class="sc" data-svc="GST Audit & Compliance" data-amt="25000" data-lnk="https://rzp.io/rzp/qUnhJXU"><div class="sc-n">GST Audit &amp; Compliance</div><div class="sc-p">Starting ₹25,000</div></div>
+        <div class="sc" data-svc="DPDP Readiness Assessment" data-amt="40000" data-lnk="https://rzp.io/rzp/CKw3iku"><div class="sc-n">DPDP Readiness Assessment</div><div class="sc-p">Starting ₹40,000</div></div>
+        <div class="sc" data-svc="Financial Operations Audit" data-amt="30000" data-lnk="https://rzp.io/rzp/Uvu5SXI"><div class="sc-n">Financial Operations Audit</div><div class="sc-p">Starting ₹30,000</div></div>
+        <div class="sc" data-svc="IT & Cybersecurity Audit" data-amt="50000" data-lnk="https://rzp.io/rzp/DzlcxHtS"><div class="sc-n">IT &amp; Cybersecurity Audit</div><div class="sc-p">Starting ₹50,000</div></div>
+        <div class="sc" data-svc="Export Compliance Review" data-amt="20000" data-lnk="https://rzp.io/rzp/qUnhJXU"><div class="sc-n">Export Compliance Review</div><div class="sc-p">Starting ₹20,000</div></div>
+        <div class="sc" data-svc="Full Audit Bundle" data-amt="75000" data-lnk="https://rzp.io/rzp/bNccdbw"><div class="sc-n">Full Audit Bundle</div><div class="sc-p">₹75,000 · Most Popular</div></div>
+        <div class="sc" data-svc="VextIntel Monthly Retainer" data-amt="15000" data-lnk="https://rzp.io/rzp/8zkeaNT5"><div class="sc-n">VextIntel Monthly Retainer</div><div class="sc-p">₹15,000 / month</div></div>
+        <div class="sc" data-svc="VextIntel Annual Retainer" data-amt="150000" data-lnk="https://rzp.io/rzp/lYCq77V"><div class="sc-n">VextIntel Annual Retainer</div><div class="sc-p">₹1,50,000 / year · Save 2 months</div></div>
       </div>
       <div class="br"><button class="bp" id="b1" disabled onclick="go(2)">Continue →</button></div>
     </div>
@@ -381,6 +381,21 @@ async function pay(){
   btn.textContent='Redirecting to payment...';
   setTimeout(function(){window.location.href=S.lnk;},900);
 }
+// Robust click handler for service cards — works on all devices
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.sc').forEach(function(card) {
+    ['click','touchend'].forEach(function(evt) {
+      card.addEventListener(evt, function(e) {
+        if(evt==='touchend') e.preventDefault();
+        var svc=card.getAttribute('data-svc');
+        var amt=card.getAttribute('data-amt');
+        var lnk=card.getAttribute('data-lnk');
+        if(svc) sel(card,svc,amt,lnk);
+      }, {passive:false});
+    });
+  });
+});
+
 (function init(){
   var p=new URLSearchParams(window.location.search);
 
